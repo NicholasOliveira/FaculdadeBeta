@@ -16,14 +16,15 @@ body{
 
 .geral{
     width: 100%;
-    height: 2000px;
+    height: 100%;
     padding-top: 100px;
+    min-height: 500px;
 }
 
-.framegeral{
- width: 98%;
- height: 1600px;
-}
+/*.framegeral{
+    width: 98%;
+    height: 1600px;
+}*/
 
 .menu{
     width: 100%;
@@ -41,7 +42,7 @@ body{
 }
 .ul1 li{
     float: left;
-    width: 100px;
+    width: 150px;
     height: 40px;
     padding: 15px;
     color: #E2CD1A;

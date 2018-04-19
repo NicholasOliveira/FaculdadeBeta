@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <title>2 - Nova Disciplina</title>
+    <link rel="stylesheet" type="text/css" href="template.css">
+</head>
+
+<script>
+    function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+var nome = getUrlVars()["nome"];
+var duracao = getUrlVars()["duracao"];
+var modalidade = getUrlVars()["modalidade"];
+var unidade = getUrlVars()["unidade"];
+var mensalidade = getUrlVars()["mensalidade"];
+var periodo = getUrlVars()["periodo"];
+var sobrecurso = getUrlVars()["sobrecurso"];
+
+
+ function add(){
+document.getElementById('nome').value=nome;
+document.getElementById('duracao').value=duracao;
+document.getElementById('modalidade').value=modalidade;
+document.getElementById('unidade').value=unidade;
+document.getElementById('mensalidade').value=mensalidade;
+document.getElementById('periodo').value=periodo;
+document.getElementById('sobrecurso').value=sobrecurso;
+}
+
+</script>
+
+
+<body onload="add()">
+
+    
+
+
+    <center><h1 class="olate">2 - Formulário de Nova Disciplina</h1></center>
+<div class="galak">
+    <form action="listardisc.html" method="GET" name="fndisciplina" >
+
+        <input type="hidden" name="nome" id="nome">
+        <input type="hidden" name="duracao" id="duracao">
+        <input type="hidden" name="modalidade" id="modalidade">
+        <input type="hidden" name="unidade" id="unidade">
+        <input type="hidden" name="mensalidade" id="mensalidade">
+        <input type="hidden" name="periodo" id="periodo">
+        <input type="hidden" name="sobrecurso" id="sobrecurso">
+
+        <br><br>
+        <div>    
+        <label>Nome : </label> <Input type="text" name="cndisciplina_nome"></Input>
+        <br><br>
+            <label>Carga Horaria: </label> <Input type="text" name="cndisciplina_carga"></Input>
+            
+        </div>   
+        <div>
+                
+                <label>Curso: </label> <Input type="text" name="cndisciplina_curso"></Input>
+                <br><br>
+            <label>Professor: </label> <Input type="text" name="cndisciplina_professor"></Input>
+            <br><br>
+            
+        </div>
+            <br><br>
+         <div id="finalform">
+            <label>Sobre a Disciplina:</label><br> <textarea class"textarea" name="cndisciplina_sobre"></textarea>
+            <br><br>
+            <div class="galak1">
+                    <a href="ncurso.html" class="ovo"> Voltar</a>
+                    </div>    
+    
+            <input type="submit" name="Enviar" value="Finalizar Cadastro">
+        </div>
+        </form>
+</div>  
+    
+    
+
+
+
+    
+</body>
+</html>

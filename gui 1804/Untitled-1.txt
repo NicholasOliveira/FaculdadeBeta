@@ -1,0 +1,37 @@
+ <div id="kitkat"><h4 class="oreoh4">CURSO </h4>
+         <i class="cinzaclaro">Análise e Desenvolvimento de Sistemas</i>
+         <br>
+         <i class="cinzaescuro">Gestão de Banco de Dados</i>
+         <br>
+         <i class="cinzaclaro">Administração</i>
+        
+                 
+    </div>
+
+    <div id="kitkatbranco"> <h4 class="oreoh4">DISCIPLINA</h4>
+        <i> Tecnologia Web </i> 
+        <br>
+        <i> Joskogay</i>
+        <br>
+        <i> Estatistica </i>
+    </div>
+
+    <div id="kitkatdark"><h4 class="oreoh4">SEMESTRE</h4>
+        <i>1º</i> <br>
+        <i>1º</i> <br>
+        <i>1º</i>
+    </div>
+
+    <div id="kitkatcaramelo"> 
+        <h4 class="oreoh4">ANO</h4> 
+        <i>2018</i> <br> 
+        <i>2018</i> <br>
+        <i>2018</i> <br>
+    </div>  
+    
+    <div id="kitkatduo"> <h4 class="oreoh4">TURMA</h4>
+
+           <i>Turma A</i> <br>
+           <i>Turma A</i> <br>
+           <i>Turma B</i> <br>
+    </div> 

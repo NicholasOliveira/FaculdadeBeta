@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+        
+       
+    <meta charset="UTF-8">
+    <title>Nova Disciplina</title>
+    <link rel="stylesheet" type="text/css" href="template.1.css">
+
+    <script language="javascript">
+        var total = 0;
+
+
+        function validarsenha(){
+        
+        senha=document.getElementById('senha').value;
+        confirmarsenha=document.getElementById('confirmarsenha').value;
+        if(senha==confirmarsenha){
+            document.getElementById('confirmarsenha').style.border='1px solid silver';
+            total += 1;
+        }else{
+            document.getElementById('confirmarsenha').style.border='1px solid red';
+        }
+    }
+
+
+            function VerificaCPF () {
+            if (vercpf(document.fndisciplina.cpf.value)) 
+            {
+                //document.fndisciplina.submit();
+                }
+            
+            else {
+                errors="1";
+                if (errors) document.getElementById('cpf').style.border='1px solid red';
+                document.retorno = (errors == '');
+            }}
+            function vercpf (cpf) 
+            {if (cpf.length != 11 || cpf == "00000000000" || cpf == "11111111111" || cpf == "22222222222" || cpf == "33333333333" || cpf == "44444444444" || cpf == "55555555555" || cpf == "66666666666" || cpf == "77777777777" || cpf == "88888888888" || cpf == "99999999999")
+            return false;
+            add = 0;
+            for (i=0; i < 9; i ++)
+            add += parseInt(cpf.charAt(i)) * (10 - i);
+            rev = 11 - (add % 11);
+            if (rev == 10 || rev == 11)
+            rev = 0;
+            if (rev != parseInt(cpf.charAt(9)))
+            return false;
+            add = 0;
+            for (i = 0; i < 10; i ++)
+            add += parseInt(cpf.charAt(i)) * (11 - i);
+            rev = 11 - (add % 11);
+            if (rev == 10 || rev == 11)
+            rev = 0;
+            if (rev != parseInt(cpf.charAt(10)))
+            return false;
+            document.getElementById('cpf').style.border='1px solid silver';
+            total += 1;
+            return true;}
+
+           
+
+function verificaIdade(dat){
+
+ vet=dat.split("-");
+         dia=vet[2];
+         mes=vet[1];
+         ano=vet[0];
+
+var txtAno = ano;
+var dataUser = ano;
+var dataAtual = new Date()
+var anoAtual = dataAtual.getFullYear();
+var diff = 0;
+
+
+if (!isNaN(dataUser)){
+
+    if (1900 < dataUser && dataUser <=  anoAtual){
+        
+        diff = anoAtual - dataUser;
+        if (diff > 18){
+            document.getElementById('nasc').style.border='1px solid silver';
+            total += 1;
+        }
+        else{
+            alert('Usuário menor de idade!');
+            document.getElementById('nasc').style.border='1px solid red';
+        }
+    }
+    else{
+        document.getElementById('nasc').style.border='1px solid red';
+        alert('Ano informado não é valido!');
+
+        txtAno.value = '';
+        txtAno.focus();
+        
+    }
+}
+else{
+    alert('Valor informado é incompatível!');
+    txtAno.value = '';
+    txtAno.focus();
+}
+};
+
+</script>
+
+
+<script>
+    function Enviar(){
+
+        if(total==3){
+            document.fndisciplina.submit();
+        }
+
+        validarsenha();
+        VerificaCPF();
+        verificaIdade(document.getElementById('nasc').value);
+        
+    }
+	
+</script>
+
+</head>
+<body>
+     
+    <center><h1 class="olate">Dados Cadastrais</h1></center>
+<div class="galak">
+    <form action="" method="GET" name="fndisciplina" >
+        <br><br>
+        <div>    
+            
+            <label>Nome Completo: </label> <Input required type="text" placeholder="Zé Carioca da Silva" name="cndisciplina"><label class="Obrigatorios"></label>
+            <br>
+            <b class="obri">*Obrigatorio</b>
+             <br><br>
+            <label>Seu e-mail: </label> <Input required type="email" placeholder="email@email.com.br" name="cndisciplina"></Input>
+            <br>
+            <b class="obri">*Obrigatorio</b>
+            <br><br>
+            <label>Número de CPF: </label> <Input required type="text" placeholder="123.456.789-10" name="cpf" id="cpf"></Input>
+            <br>
+            <b class="obri">*Obrigatorio</b>
+            <br><br>
+            <label>Senha: </label> <Input required type="password" id="senha" placeholder="********" name="cndisciplina"></Input>
+            <br>
+            <b class="obri">*Obrigatorio</b>
+            <br><br> 
+           
+        </div>   
+        <div>
+                
+            <label>Data de nasc.: </label> <Input required type="date" id="nasc" value="01/01/1990" name="data_nascimento"></Input>
+            <br>
+            <b class="obri">*Obrigatorio</b>
+            <br><br>
+            <label>Celular: </label> <Input type="tel" pattern="^\d{11}$"  placeholder="(99)99999-9999" value="11111111111" required></Input>
+            <br>
+            
+            <br><br>
+            <label>Login: </label> <Input required type="text" required="" placeholder="Ze_Carioca " name="cndisciplina" ></Input>
+            <br>
+            <b class="obri"> *Obrigatorio</b>
+            <br><br>
+            <label>Confirmar senha: </label> <Input required type="password" id="confirmarsenha" placeholder="********" name="cndisciplina"></Input>
+            <br>
+            <b class="obri"> *Obrigatorio</b>
+            <br><br>
+           
+        </div>
+            <br><br>
+         <div id="finalform">
+            
+            <br><br>
+            <div class="galak1">
+                    <a href="index.hmtl" class="ovo"> Voltar</a>
+            </div>    
+             
+            <input type="button" value="Finalizar" onclick="Enviar(); " class="ovo">
+        
+        </div>
+
+        </form>
+</div>  
+    
+    
+
+
+
+    
+</body>
+</html>

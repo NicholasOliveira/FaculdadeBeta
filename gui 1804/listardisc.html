@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>1 - Novo Curso</title>
+    <link rel="stylesheet" type="text/css" href="template.css">
+
+    <script>
+            function getUrlVars()
+        {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+        
+        var nome = getUrlVars()["nome"];
+        var duracao = getUrlVars()["duracao"];
+        var modalidade = getUrlVars()["modalidade"];
+        var unidade = getUrlVars()["unidade"];
+        var mensalidade = getUrlVars()["mensalidade"];
+        var periodo = getUrlVars()["periodo"];
+        var sobrecurso = getUrlVars()["sobrecurso"];
+
+         var cndisciplina_nome = getUrlVars()["cndisciplina_nome"];
+         var cndisciplina_carga = getUrlVars()["cndisciplina_carga"];
+         var cndisciplina_curso = getUrlVars()["cndisciplina_curso"];
+         var cndisciplina_professor = getUrlVars()["cndisciplina_professor"];
+         var cndisciplina_sobre = getUrlVars()["cndisciplina_sobre"];
+         
+         //alert(nome)
+         //alert(cndisciplina_nome)
+        
+        function Enviar(curso){
+
+                if(curso=='Form_adm'){
+                        document.Form_adm.submit();
+                }
+                if(curso=='Form_ads'){
+                        document.Form_ads.submit();
+                }
+                if(curso=='Form_bd'){
+                        document.Form_bd.submit();
+                }
+                
+        }
+
+        </script>
+
+</head>
+<body>
+        
+    <center><h1 class="olate">Listar Cursos e Disciplinas</h1></center>
+
+<div class="galak">
+
+        <table>
+                <tr>
+                  <th>CURSO</th>
+                  <th>DISCIPLINA</th>
+                  <th>SEMESTRE</th>
+                  <th>ANO</th>
+                  <th>TURMA</th>
+                </tr>
+                <a href="alunoads.html">
+
+        <form name="Form_ads" action="alunoads.html">
+                        <input type="hidden" name="curso" value="ADS">
+                <tr>
+                  <td>Análise e Desenvolvimento de Sistemas</td>
+                  <td><select id="selectG" name="disciplina" id="disciplina">
+                          <option value="Linguagem de Programação">Linguagem de Programação</option>
+                          <option value="Linguagem SQL">Linguagem SQL</option>
+                          <option value="Tecnologia Web">Tecnologia Web</option>
+                          <option value="Engenharia de Software">Engenharia de Software</option>
+                  </select></td>
+                  <td><select id="selectP" name="semestre" id="semestre">
+                                <option value="1">1°</option>
+                                <option value="2">2°</option>
+                                <option value="3">3°</option>
+                                <option value="4">4°</option>
+                        </select></td>
+                  <td><select id="selectM" name="ano" id="ano">
+                                        <option value="1">2017</option>
+                                        <option value="2">2018</option>
+                                </select></td>
+                 <td><select id="selectP" name="turma" id="turma"  >
+                                <option value="a">A</option>
+                                <option value="b">B</option>
+                                <option value="c">C</option>
+                                <option value="d">D</option>
+                </select></td>
+               
+                <td>
+                       <input type="button" value="VER ALUNOS" id="btn_veralunos" onclick="Enviar('Form_ads');"> 
+                </td>
+                </tr>
+        </form>
+
+
+        <form name="Form_bd" action="alunoads.html">
+                        <input type="hidden" name="curso" value="BD">
+                <tr>
+                  <td>Gestão de Banco de Dados</td>
+                  <td><select id="selectG" name="disciplina" id="disciplina">
+                                <option value="Comunicação e Expressão">Comunicação e Expressão</option>
+                                <option value="Fundamentos de Banco de Dadosb">Fundamentos de Banco de Dadosb</option>
+                                <option value="Linguagem de Programação">Linguagem de Programação</option>
+                                <option value="Lógica de Programação">Lógica de Programação</option>
+                        </select></td>
+                        <td><select id="selectP" name="semestre" id="semestre">
+                                      <option value="1">1°</option>
+                                      <option value="2">2°</option>
+                                      <option value="3">3°</option>
+                                      <option value="4">4°</option>
+                              </select></td>
+                        <td><select id="selectM" name="ano" id="ano">
+                                              <option value="1">2017</option>
+                                              <option value="2">2018</option>
+                                      </select></td>
+                       <td><select id="selectP" name="turma" id="turma"  >
+                                      <option value="a">A</option>
+                                      <option value="b">B</option>
+                                      <option value="c">C</option>
+                                      <option value="d">D</option>
+                      </select></td>
+                      <td>
+                                <input type="button" value="VER ALUNOS" id="btn_veralunos" onclick="Enviar('Form_bd');"> 
+                         </td>
+                </tr>
+        </form>
+                <tr>
+                        <td>Administração</td>
+<form name="Form_adm" action="alunoads.html">
+                <input type="hidden" name="curso" value="ADM">
+                        <td><select id="selectG" name="disciplina" id="disciplina">
+                                        <option value="Comportamento Organizacional">Comportamento Organizacional</option>
+                                        <option value="Contabilidade Gerencial">Contabilidade Gerencial</option>
+                                        <option value="Inteligência de Negócios">Inteligência de Negócios</option>
+                                        <option value="Matemática Financeira">Matemática Financeira</option>
+                                </select></td>
+
+                                <td><select id="selectP" name="semestre" id="semestre">
+                                              <option value="1">1°</option>
+                                              <option value="2">2°</option>
+                                              <option value="3">3°</option>
+                                              <option value="4">4°</option>
+                                      </select></td>
+                                <td><select id="selectM" name="ano" id="ano">
+                                                      <option value="1">2017</option>
+                                                      <option value="2">2018</option>
+                                              </select></td>
+                               <td><select id="selectP" name="turma" id="turma"  >
+                                              <option value="a">A</option>
+                                              <option value="b">B</option>
+                                              <option value="c">C</option>
+                                              <option value="d">D</option>
+                              </select></td>
+                              <td>
+                                        <input type="button" value="VER ALUNOS" id="btn_veralunos" onclick="Enviar('Form_adm');"> 
+                                 </td>
+                </tr>
+        </form>
+               
+                </tr>
+              </table>
+              <br><br>
+              <div class="galak1">
+           
+                </div>    
+</div>  
+
+    
+    
+
+
+
+    
+</body>
+</html>
+
+
+
+
+
